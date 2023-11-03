@@ -1,23 +1,31 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+import requests
 
-int main(int argc, char *argv[]) {
-  // Check if the user has specified a directory or file to open.
-  if (argc != 2) {
-    fprintf(stderr, "Usage: %s <directory/file>\n", argv[0]);
-    return EXIT_FAILURE;
-  }
+def get_city_weather(city):
+  """Fetches the weather forecast for the specified city using the wttr.in API.
 
-  // Open the directory or file.
-  int ret = chdir(argv[1]);
-  if (ret != 0) {
-    perror("chdir");
-    return EXIT_FAILURE;
-  }
+  Args:
+    city: The name of the city to fetch the weather forecast for.
 
-  // Print a success message.
-  printf("Opened '%s'\n", argv[1]);
+  Returns:
+    A string containing the weather forecast, or None if the request fails.
+  """
 
-  return EXIT_SUCCESS;
-}
+  url = f"https://wttr.in/{city}"
+  response = requests.get(url)
+  if response.status_code == 200:
+    return response.content.decode("utf-8")
+  else:
+    return None
+
+def main():
+  """Prints the weather forecast for the city specified in the command to the console."""
+
+  city = "Mashhad"
+  weather = get_city_weather(city)
+  if weather is not None:
+    print(weather)
+  else:
+    print("Failed to fetch weather forecast.")
+
+if __name__ == "__main__":
+  main()
