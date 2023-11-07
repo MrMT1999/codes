@@ -1,13 +1,14 @@
+"""This code make it realiable to linux environment for makeing a commmand out of it"""
+ #!/usr/bin/env python3
+
 import requests
 
 def get_city_weather(city):
-  """Fetches the weather forecast for the specified city using the wttr.in API.
-
+  """
+  This code will fetch the forecast for weather from An API from wttr.in
   Args:
     city: The name of the city to fetch the weather forecast for.
 
-  Returns:
-    A string containing the weather forecast, or None if the request fails.
   """
 
   url = f"https://wttr.in/{city}"
