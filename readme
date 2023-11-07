@@ -14,4 +14,12 @@ with using this code
 export PATH="$PATH:~/bin """ replace bin with the weather.py script directory"""
 
 
+***********************************************************************************************************
+for the C file you can use the command bellow to compile it 
+gcc -o findfile findfile.c
+
+and if gcc wasn't installed use
+""" sudo apt install gcc """
+to install gcc compiler
+
 
