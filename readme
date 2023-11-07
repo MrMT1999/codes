@@ -1,0 +1,17 @@
+for making the python code as a command in linux environment use the code below
+
+
+-------------------------------------------------------------
+execute this code in command shell
+chmod +x weather.py
+
+
+-------------------------------------------------------------
+
+And now add the python code to the environment variable PATH
+use the code ~/.bashrc to open environment editor and """you can use nano ~/.bashrc to open also"""
+with using this code 
+export PATH="$PATH:~/bin """ replace bin with the weather.py script directory"""
+
+
+
