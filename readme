@@ -21,6 +21,3 @@ gcc -o findfile findfile.c
 and if gcc wasn't installed use
 """ sudo apt install gcc """
 to install gcc compiler
-
-
-https://raw.githubusercontent.com/amirmohammad-mohammad-88/Sub-Reality-Azadi-config/Config/Azadi-Reality-Different
